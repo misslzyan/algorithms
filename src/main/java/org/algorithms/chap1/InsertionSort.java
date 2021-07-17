@@ -1,6 +1,5 @@
 package org.algorithms.chap1;
 
-import java.util.Arrays;
 import org.util.IoUtil;
 
 /**
