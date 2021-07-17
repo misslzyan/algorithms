@@ -1,6 +1,7 @@
 package org.algorithms.chap2;
 
 import java.util.Arrays;
+import org.util.IoUtil;
 
 /**
  * @author duanweidong
@@ -11,7 +12,7 @@ public class BinaryInsertionSort {
     public static void main(String[] args) {
         int[] array = new int[] {5, 4, 3, 2, 2, 1};
         binaryInsertionSort(array);
-        Arrays.stream(array).forEach(System.out::println);
+        IoUtil.print(array);
     }
 
     public static void binaryInsertionSort(int[] array) {

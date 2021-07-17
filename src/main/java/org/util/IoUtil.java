@@ -1,5 +1,6 @@
 package org.util;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -9,10 +10,25 @@ import java.util.List;
 public class IoUtil {
 
     public static <T> void print(List<T> list) {
-        list.stream().map(v -> v + "\t").forEach(System.out::print);
+        list.stream().map(IoUtil::addSpace).forEach(System.out::print);
+        System.out.println();
     }
 
     public static void print(Node list) {
-        list.toList().stream().map(v -> v + "\t").forEach(System.out::print);
+        list.toList().stream().map(IoUtil::addSpace).forEach(System.out::print);
+        System.out.println();
+    }
+
+    public static void print(int[] array) {
+        Arrays.stream(array).mapToObj(IoUtil::addSpace).forEach(System.out::print);
+        System.out.println();
+    }
+
+    public static String addSpace(int val) {
+        return val + "\t";
+    }
+
+    public static String addSpace(Object val) {
+        return val + "\t";
     }
 }
