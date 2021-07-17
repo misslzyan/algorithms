@@ -12,6 +12,9 @@ public class InsertionSort {
         int[] array = new int[] {5, 4, 3, 2, 1, 0};
         insertionSort(array);
         Arrays.stream(array).forEach(System.out::println);
+        insertionSortDesc(array);
+        System.out.println("------");
+        Arrays.stream(array).forEach(System.out::println);
     }
 
     /**
@@ -24,6 +27,23 @@ public class InsertionSort {
             int j = i - 1;
             while (j >= 0 && array[j] > key) {
                 array[j+1] = array[j];
+                j--;
+            }
+            array[j + 1] = key;
+        }
+    }
+
+    /**
+     * insertion sort desc
+     * @param array
+     */
+    public static void insertionSortDesc(int[] array) {
+        int len = array.length;
+        for (int i = 1; i < len; i++) {
+            int key = array[i];
+            int j = i - 1;
+            while(j >= 0 && array[j] < key) {
+                array[j + 1] = array[j];
                 j--;
             }
             array[j + 1] = key;
