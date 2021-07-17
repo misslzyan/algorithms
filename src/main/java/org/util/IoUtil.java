@@ -24,6 +24,10 @@ public class IoUtil {
         System.out.println();
     }
 
+    public static void print(boolean bool) {
+        System.out.println(bool);
+    }
+
     public static String addSpace(int val) {
         return val + "\t";
     }
