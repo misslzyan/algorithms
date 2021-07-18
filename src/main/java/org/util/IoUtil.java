@@ -28,6 +28,10 @@ public class IoUtil {
         System.out.println(bool);
     }
 
+    public static void print(double num) {
+        System.out.println(num);
+    }
+
     public static String addSpace(int val) {
         return val + "\t";
     }
