@@ -16,6 +16,11 @@ public class MergeSortInversion {
         IoUtil.print(mergeSortInversion(array));
     }
 
+    /**
+     * θ(n*lgn)
+     * @param array
+     * @return
+     */
     public static int mergeSortInversion(int[] array) {
         return mergeSortInversion(array, 0, array.length);
     }
