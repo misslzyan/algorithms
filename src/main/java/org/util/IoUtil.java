@@ -2,6 +2,7 @@ package org.util;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.StringJoiner;
 
 /**
  * @author duanweidong
@@ -26,6 +27,17 @@ public class IoUtil {
 
     public static void print(boolean bool) {
         System.out.println(bool);
+    }
+
+    public static void print(Subarray subarray) {
+        int low = subarray.low;
+        int high = subarray.high;
+        int[] array = subarray.array;
+        StringJoiner joiner = new StringJoiner(" ");
+        for (int i = low; i < high; i++) {
+            joiner.add(array[i] + "");
+        }
+        System.out.println(joiner.toString());
     }
 
     public static void print(double num) {
