@@ -1,13 +1,13 @@
 package org.util;
 
-import com.sun.tools.javac.util.List;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import org.algorithms.chap4.FindMaximumSubarray;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -36,11 +36,15 @@ public class PerformanceTest {
             long second = CommonUtil.currentTimestamp();
             FindMaximumSubarray.findMaximumSubarray(array);
             long end = CommonUtil.currentTimestamp();
-            return List.of(first - start, second - first, end - second)
-                .stream()
+            List<Long> list = new ArrayList<>();
+            list.add(first - start);
+            list.add(second - first);
+            list.add(end - second);
+            return list.stream()
                 .map(l -> l.toString())
                 .collect(Collectors.joining(","));
         }, 1, 10);
+        Assert.assertEquals(false, true);
     }
 
     private void run(Function<Integer, String> function, int begin, int end) {
