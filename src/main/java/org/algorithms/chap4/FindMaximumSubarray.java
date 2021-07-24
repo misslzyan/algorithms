@@ -15,6 +15,12 @@ public class FindMaximumSubarray {
         IoUtil.print(subarray);
         IoUtil.print(findMaximumArrayWithDivide(array));
         IoUtil.print(findMaximumSubarrayQuickly(array));
+
+        array = new int[]{-13, -3, -25, -20, -3, -16, -23};
+        subarray = findMaximumSubarray(array);
+        IoUtil.print(subarray);
+        IoUtil.print(findMaximumArrayWithDivide(array));
+        IoUtil.print(findMaximumSubarrayQuickly(array));
     }
 
     /**
@@ -73,6 +79,7 @@ public class FindMaximumSubarray {
                 p_a.max = 0;
                 p_a.low = i + 1;
                 if (subarray.max < array[i]) {
+                    subarray.max = array[i];
                     subarray.low = i;
                     subarray.high = i + 1;
                 }
