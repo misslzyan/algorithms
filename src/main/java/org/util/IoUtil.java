@@ -3,6 +3,7 @@ package org.util;
 import java.util.Arrays;
 import java.util.List;
 import java.util.StringJoiner;
+import java.util.stream.Stream;
 
 /**
  * @author duanweidong
@@ -13,6 +14,10 @@ public class IoUtil {
     public static <T> void print(List<T> list) {
         list.stream().map(IoUtil::addSpace).forEach(System.out::print);
         System.out.println();
+    }
+
+    public static <T> void print(Stream<T> stream) {
+        stream.forEach(System.out::println);
     }
 
     public static void print(Node list) {
