@@ -40,7 +40,7 @@ public class PerformanceTest {
                 .stream()
                 .map(l -> l.toString())
                 .collect(Collectors.joining(","));
-        }, 1, 2);
+        }, 1, 10);
     }
 
     private void run(Function<Integer, String> function, int begin, int end) {
